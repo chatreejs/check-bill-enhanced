@@ -32,11 +32,23 @@
 										<default_text/>
 										<translations>
 											<translation>
+												<language>de-DE</language>
+												<approved>false</approved>
+											</translation>
+											<translation>
 												<language>en-US</language>
 												<approved>false</approved>
 											</translation>
 											<translation>
 												<language>ja-JP</language>
+												<approved>false</approved>
+											</translation>
+											<translation>
+												<language>ko-KR</language>
+												<approved>false</approved>
+											</translation>
+											<translation>
+												<language>ru-RU</language>
 												<approved>false</approved>
 											</translation>
 											<translation>
@@ -56,11 +68,23 @@
 										<default_text/>
 										<translations>
 											<translation>
+												<language>de-DE</language>
+												<approved>false</approved>
+											</translation>
+											<translation>
 												<language>en-US</language>
 												<approved>false</approved>
 											</translation>
 											<translation>
 												<language>ja-JP</language>
+												<approved>false</approved>
+											</translation>
+											<translation>
+												<language>ko-KR</language>
+												<approved>false</approved>
+											</translation>
+											<translation>
+												<language>ru-RU</language>
 												<approved>false</approved>
 											</translation>
 											<translation>
@@ -80,11 +104,23 @@
 										<default_text/>
 										<translations>
 											<translation>
+												<language>de-DE</language>
+												<approved>false</approved>
+											</translation>
+											<translation>
 												<language>en-US</language>
 												<approved>false</approved>
 											</translation>
 											<translation>
 												<language>ja-JP</language>
+												<approved>false</approved>
+											</translation>
+											<translation>
+												<language>ko-KR</language>
+												<approved>false</approved>
+											</translation>
+											<translation>
+												<language>ru-RU</language>
 												<approved>false</approved>
 											</translation>
 											<translation>
@@ -104,11 +140,23 @@
 										<default_text/>
 										<translations>
 											<translation>
+												<language>de-DE</language>
+												<approved>false</approved>
+											</translation>
+											<translation>
 												<language>en-US</language>
 												<approved>false</approved>
 											</translation>
 											<translation>
 												<language>ja-JP</language>
+												<approved>false</approved>
+											</translation>
+											<translation>
+												<language>ko-KR</language>
+												<approved>false</approved>
+											</translation>
+											<translation>
+												<language>ru-RU</language>
 												<approved>false</approved>
 											</translation>
 											<translation>
@@ -128,11 +176,23 @@
 										<default_text/>
 										<translations>
 											<translation>
+												<language>de-DE</language>
+												<approved>false</approved>
+											</translation>
+											<translation>
 												<language>en-US</language>
 												<approved>false</approved>
 											</translation>
 											<translation>
 												<language>ja-JP</language>
+												<approved>false</approved>
+											</translation>
+											<translation>
+												<language>ko-KR</language>
+												<approved>false</approved>
+											</translation>
+											<translation>
+												<language>ru-RU</language>
 												<approved>false</approved>
 											</translation>
 											<translation>
@@ -159,11 +219,23 @@
 								<default_text/>
 								<translations>
 									<translation>
+										<language>de-DE</language>
+										<approved>false</approved>
+									</translation>
+									<translation>
 										<language>en-US</language>
 										<approved>false</approved>
 									</translation>
 									<translation>
 										<language>ja-JP</language>
+										<approved>false</approved>
+									</translation>
+									<translation>
+										<language>ko-KR</language>
+										<approved>false</approved>
+									</translation>
+									<translation>
+										<language>ru-RU</language>
 										<approved>false</approved>
 									</translation>
 									<translation>
@@ -189,11 +261,23 @@
 												<default_text/>
 												<translations>
 													<translation>
+														<language>de-DE</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
 														<language>en-US</language>
 														<approved>false</approved>
 													</translation>
 													<translation>
 														<language>ja-JP</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>ko-KR</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>ru-RU</language>
 														<approved>false</approved>
 													</translation>
 													<translation>
@@ -213,11 +297,23 @@
 												<default_text/>
 												<translations>
 													<translation>
+														<language>de-DE</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
 														<language>en-US</language>
 														<approved>false</approved>
 													</translation>
 													<translation>
 														<language>ja-JP</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>ko-KR</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>ru-RU</language>
 														<approved>false</approved>
 													</translation>
 													<translation>
@@ -237,11 +333,23 @@
 												<default_text/>
 												<translations>
 													<translation>
+														<language>de-DE</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
 														<language>en-US</language>
 														<approved>false</approved>
 													</translation>
 													<translation>
 														<language>ja-JP</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>ko-KR</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>ru-RU</language>
 														<approved>false</approved>
 													</translation>
 													<translation>
@@ -261,11 +369,23 @@
 												<default_text/>
 												<translations>
 													<translation>
+														<language>de-DE</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
 														<language>en-US</language>
 														<approved>false</approved>
 													</translation>
 													<translation>
 														<language>ja-JP</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>ko-KR</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>ru-RU</language>
 														<approved>false</approved>
 													</translation>
 													<translation>
@@ -285,11 +405,23 @@
 												<default_text/>
 												<translations>
 													<translation>
+														<language>de-DE</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
 														<language>en-US</language>
 														<approved>false</approved>
 													</translation>
 													<translation>
 														<language>ja-JP</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>ko-KR</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>ru-RU</language>
 														<approved>false</approved>
 													</translation>
 													<translation>
@@ -317,11 +449,23 @@
 														<default_text/>
 														<translations>
 															<translation>
+																<language>de-DE</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
 																<language>en-US</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
 																<language>ja-JP</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ko-KR</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ru-RU</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
@@ -341,11 +485,23 @@
 														<default_text/>
 														<translations>
 															<translation>
+																<language>de-DE</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
 																<language>en-US</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
 																<language>ja-JP</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ko-KR</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ru-RU</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
@@ -365,11 +521,23 @@
 														<default_text/>
 														<translations>
 															<translation>
+																<language>de-DE</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
 																<language>en-US</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
 																<language>ja-JP</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ko-KR</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ru-RU</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
@@ -389,11 +557,23 @@
 														<default_text/>
 														<translations>
 															<translation>
+																<language>de-DE</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
 																<language>en-US</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
 																<language>ja-JP</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ko-KR</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ru-RU</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
@@ -413,11 +593,23 @@
 														<default_text/>
 														<translations>
 															<translation>
+																<language>de-DE</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
 																<language>en-US</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
 																<language>ja-JP</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ko-KR</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ru-RU</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
@@ -437,11 +629,23 @@
 														<default_text/>
 														<translations>
 															<translation>
+																<language>de-DE</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
 																<language>en-US</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
 																<language>ja-JP</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ko-KR</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ru-RU</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
@@ -461,11 +665,23 @@
 														<default_text/>
 														<translations>
 															<translation>
+																<language>de-DE</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
 																<language>en-US</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
 																<language>ja-JP</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ko-KR</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ru-RU</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
@@ -490,11 +706,23 @@
 														<default_text/>
 														<translations>
 															<translation>
+																<language>de-DE</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
 																<language>en-US</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
 																<language>ja-JP</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ko-KR</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ru-RU</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
@@ -514,11 +742,23 @@
 														<default_text/>
 														<translations>
 															<translation>
+																<language>de-DE</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
 																<language>en-US</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
 																<language>ja-JP</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ko-KR</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ru-RU</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
@@ -545,11 +785,23 @@
 												<default_text/>
 												<translations>
 													<translation>
+														<language>de-DE</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
 														<language>en-US</language>
 														<approved>false</approved>
 													</translation>
 													<translation>
 														<language>ja-JP</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>ko-KR</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>ru-RU</language>
 														<approved>false</approved>
 													</translation>
 													<translation>
@@ -569,11 +821,23 @@
 												<default_text/>
 												<translations>
 													<translation>
+														<language>de-DE</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
 														<language>en-US</language>
 														<approved>false</approved>
 													</translation>
 													<translation>
 														<language>ja-JP</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>ko-KR</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>ru-RU</language>
 														<approved>false</approved>
 													</translation>
 													<translation>
@@ -598,11 +862,23 @@
 												<default_text/>
 												<translations>
 													<translation>
+														<language>de-DE</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
 														<language>en-US</language>
 														<approved>false</approved>
 													</translation>
 													<translation>
 														<language>ja-JP</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>ko-KR</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>ru-RU</language>
 														<approved>false</approved>
 													</translation>
 													<translation>
@@ -622,11 +898,23 @@
 												<default_text/>
 												<translations>
 													<translation>
+														<language>de-DE</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
 														<language>en-US</language>
 														<approved>false</approved>
 													</translation>
 													<translation>
 														<language>ja-JP</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>ko-KR</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>ru-RU</language>
 														<approved>false</approved>
 													</translation>
 													<translation>
@@ -646,11 +934,23 @@
 												<default_text/>
 												<translations>
 													<translation>
+														<language>de-DE</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
 														<language>en-US</language>
 														<approved>false</approved>
 													</translation>
 													<translation>
 														<language>ja-JP</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>ko-KR</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>ru-RU</language>
 														<approved>false</approved>
 													</translation>
 													<translation>
@@ -680,11 +980,23 @@
 												<default_text/>
 												<translations>
 													<translation>
+														<language>de-DE</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
 														<language>en-US</language>
 														<approved>false</approved>
 													</translation>
 													<translation>
 														<language>ja-JP</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>ko-KR</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>ru-RU</language>
 														<approved>false</approved>
 													</translation>
 													<translation>
@@ -704,11 +1016,23 @@
 												<default_text/>
 												<translations>
 													<translation>
+														<language>de-DE</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
 														<language>en-US</language>
 														<approved>false</approved>
 													</translation>
 													<translation>
 														<language>ja-JP</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>ko-KR</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>ru-RU</language>
 														<approved>false</approved>
 													</translation>
 													<translation>
@@ -728,11 +1052,23 @@
 												<default_text/>
 												<translations>
 													<translation>
+														<language>de-DE</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
 														<language>en-US</language>
 														<approved>false</approved>
 													</translation>
 													<translation>
 														<language>ja-JP</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>ko-KR</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>ru-RU</language>
 														<approved>false</approved>
 													</translation>
 													<translation>
@@ -752,11 +1088,23 @@
 												<default_text/>
 												<translations>
 													<translation>
+														<language>de-DE</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
 														<language>en-US</language>
 														<approved>false</approved>
 													</translation>
 													<translation>
 														<language>ja-JP</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>ko-KR</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>ru-RU</language>
 														<approved>false</approved>
 													</translation>
 													<translation>
@@ -784,11 +1132,23 @@
 														<default_text/>
 														<translations>
 															<translation>
+																<language>de-DE</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
 																<language>en-US</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
 																<language>ja-JP</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ko-KR</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ru-RU</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
@@ -808,11 +1168,23 @@
 														<default_text/>
 														<translations>
 															<translation>
+																<language>de-DE</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
 																<language>en-US</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
 																<language>ja-JP</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ko-KR</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ru-RU</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
@@ -832,11 +1204,23 @@
 														<default_text/>
 														<translations>
 															<translation>
+																<language>de-DE</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
 																<language>en-US</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
 																<language>ja-JP</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ko-KR</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ru-RU</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
@@ -856,11 +1240,23 @@
 														<default_text/>
 														<translations>
 															<translation>
+																<language>de-DE</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
 																<language>en-US</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
 																<language>ja-JP</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ko-KR</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ru-RU</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
@@ -880,11 +1276,23 @@
 														<default_text/>
 														<translations>
 															<translation>
+																<language>de-DE</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
 																<language>en-US</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
 																<language>ja-JP</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ko-KR</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ru-RU</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
@@ -904,11 +1312,23 @@
 														<default_text/>
 														<translations>
 															<translation>
+																<language>de-DE</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
 																<language>en-US</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
 																<language>ja-JP</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ko-KR</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ru-RU</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
@@ -928,11 +1348,23 @@
 														<default_text/>
 														<translations>
 															<translation>
+																<language>de-DE</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
 																<language>en-US</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
 																<language>ja-JP</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ko-KR</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ru-RU</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
@@ -957,11 +1389,23 @@
 														<default_text/>
 														<translations>
 															<translation>
+																<language>de-DE</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
 																<language>en-US</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
 																<language>ja-JP</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ko-KR</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ru-RU</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
@@ -981,11 +1425,23 @@
 														<default_text/>
 														<translations>
 															<translation>
+																<language>de-DE</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
 																<language>en-US</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
 																<language>ja-JP</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ko-KR</language>
+																<approved>false</approved>
+															</translation>
+															<translation>
+																<language>ru-RU</language>
 																<approved>false</approved>
 															</translation>
 															<translation>
@@ -1012,11 +1468,23 @@
 												<default_text/>
 												<translations>
 													<translation>
+														<language>de-DE</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
 														<language>en-US</language>
 														<approved>false</approved>
 													</translation>
 													<translation>
 														<language>ja-JP</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>ko-KR</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>ru-RU</language>
 														<approved>false</approved>
 													</translation>
 													<translation>
@@ -1036,11 +1504,23 @@
 												<default_text/>
 												<translations>
 													<translation>
+														<language>de-DE</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
 														<language>en-US</language>
 														<approved>false</approved>
 													</translation>
 													<translation>
 														<language>ja-JP</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>ko-KR</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>ru-RU</language>
 														<approved>false</approved>
 													</translation>
 													<translation>
@@ -1065,11 +1545,23 @@
 												<default_text/>
 												<translations>
 													<translation>
+														<language>de-DE</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
 														<language>en-US</language>
 														<approved>false</approved>
 													</translation>
 													<translation>
 														<language>ja-JP</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>ko-KR</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>ru-RU</language>
 														<approved>false</approved>
 													</translation>
 													<translation>
@@ -1096,11 +1588,23 @@
 										<default_text/>
 										<translations>
 											<translation>
+												<language>de-DE</language>
+												<approved>false</approved>
+											</translation>
+											<translation>
 												<language>en-US</language>
 												<approved>false</approved>
 											</translation>
 											<translation>
 												<language>ja-JP</language>
+												<approved>false</approved>
+											</translation>
+											<translation>
+												<language>ko-KR</language>
+												<approved>false</approved>
+											</translation>
+											<translation>
+												<language>ru-RU</language>
 												<approved>false</approved>
 											</translation>
 											<translation>
@@ -1120,11 +1624,23 @@
 										<default_text/>
 										<translations>
 											<translation>
+												<language>de-DE</language>
+												<approved>false</approved>
+											</translation>
+											<translation>
 												<language>en-US</language>
 												<approved>false</approved>
 											</translation>
 											<translation>
 												<language>ja-JP</language>
+												<approved>false</approved>
+											</translation>
+											<translation>
+												<language>ko-KR</language>
+												<approved>false</approved>
+											</translation>
+											<translation>
+												<language>ru-RU</language>
 												<approved>false</approved>
 											</translation>
 											<translation>
@@ -1148,10 +1664,19 @@
 	<isTemplateProject>false</isTemplateProject>
 	<languages>
 		<language>
+			<code>de-DE</code>
+		</language>
+		<language>
 			<code>en-US</code>
 		</language>
 		<language>
 			<code>ja-JP</code>
+		</language>
+		<language>
+			<code>ko-KR</code>
+		</language>
+		<language>
+			<code>ru-RU</code>
 		</language>
 		<language>
 			<code>th-TH</code>
@@ -1165,19 +1690,31 @@
 			<name>main</name>
 			<translation_urls>
 				<translation_url>
-					<path>src/assets/i18n/en.json</path>
+					<path>src/assets/i18n/de-DE.json</path>
+					<language>de-DE</language>
+				</translation_url>
+				<translation_url>
+					<path>src/assets/i18n/en-US.json</path>
 					<language>en-US</language>
 				</translation_url>
 				<translation_url>
-					<path>src/assets/i18n/ja.json</path>
+					<path>src/assets/i18n/ja-JP.json</path>
 					<language>ja-JP</language>
 				</translation_url>
 				<translation_url>
-					<path>src/assets/i18n/th.json</path>
+					<path>src/assets/i18n/ko-KR.json</path>
+					<language>ko-KR</language>
+				</translation_url>
+				<translation_url>
+					<path>src/assets/i18n/ru-RU.json</path>
+					<language>ru-RU</language>
+				</translation_url>
+				<translation_url>
+					<path>src/assets/i18n/th-TH.json</path>
 					<language>th-TH</language>
 				</translation_url>
 				<translation_url>
-					<path>src/assets/i18n/zh.json</path>
+					<path>src/assets/i18n/zh-CN.json</path>
 					<language>zh-CN</language>
 				</translation_url>
 			</translation_urls>

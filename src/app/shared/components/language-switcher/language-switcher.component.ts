@@ -15,24 +15,39 @@ interface Language {
 export class LanguageSwitcherComponent implements OnInit {
   languages: Language[] = [
     {
-      code: 'en',
+      code: 'en-US',
       countryCode: 'us',
-      name: 'English',
+      name: 'English (US)',
     },
     {
-      code: 'th',
+      code: 'th-TH',
       countryCode: 'th',
-      name: 'ไทย',
+      name: 'ภาษาไทย',
     },
     {
-      code: 'zh',
+      code: 'zh-CN',
       countryCode: 'cn',
-      name: '中文',
+      name: '简体中文',
     },
     {
-      code: 'ja',
+      code: 'ja-JP',
       countryCode: 'jp',
       name: '日本語',
+    },
+    {
+      code: 'ko-KR',
+      countryCode: 'kr',
+      name: '한국어',
+    },
+    {
+      code: 'de-DE',
+      countryCode: 'de',
+      name: 'Deutsch',
+    },
+    {
+      code: 'ru-RU',
+      countryCode: 'ru',
+      name: 'Русский',
     },
   ];
   selectedLanguage!: Language;
@@ -46,7 +61,7 @@ export class LanguageSwitcherComponent implements OnInit {
   ngOnInit(): void {
     const languages = this.languages.map((language) => language.code);
     this.translate.addLangs(languages);
-    this.translate.setDefaultLang('en');
+    this.translate.setDefaultLang('en-US');
     this.initDefaultLanguage();
   }
 
@@ -57,13 +72,13 @@ export class LanguageSwitcherComponent implements OnInit {
         (language) => language.code === this.languageStorage,
       );
     } else {
-      const browserLang = this.translate.getBrowserLang();
+      const browserLang = this.translate.getBrowserCultureLang();
       language = this.languages.find(
         (language) => language.code === browserLang,
       );
     }
 
-    this.translate.use(language?.code || 'en');
+    this.translate.use(language?.code || 'en-US');
     this.selectedLanguage = language || this.languages[0];
     this.saveLanguageToStorage(this.selectedLanguage);
   }

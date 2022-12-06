@@ -1,0 +1,81 @@
+{
+	"common": {
+		"button": {
+			"cancel": "Stornieren",
+			"delete": "Löschen",
+			"next": "Nächster",
+			"ok": "OK",
+			"save": "sparen"
+		}
+	},
+	"home": {
+		"billTitle": "Rechnungsname",
+		"itemList": {
+			"button": {
+				"add": "Artikel hinzufügen",
+				"addFromBill": "Von Rechnung hinzufügen",
+				"deleteAll": "Alle Elemente löschen",
+				"deleteSelected": "Ausgewählte(s) Element(e) löschen",
+				"select": "Gegenstände auswählen)"
+			},
+			"modal": {
+				"form": {
+					"delete": "Element löschen",
+					"name": "Artikelname",
+					"nameError": "Bitte geben Sie den Artikelnamen ein",
+					"price": "Stückpreis",
+					"priceError": "Bitte Artikelpreis eingeben",
+					"quantity": "Menge",
+					"quantityError": "Bitte geben Sie die Artikelmenge ein"
+				},
+				"title": {
+					"add": "Neues Element hinzufügen",
+					"edit": "Element bearbeiten"
+				}
+			},
+			"popup": {
+				"deleteAll": "Möchten Sie alle Artikel löschen?",
+				"deleteSelected": "Möchten Sie ausgewählte {{count}} Artikel löschen?"
+			},
+			"table": {
+				"name": "Name",
+				"price": "Stückpreis",
+				"quantity": "Menge"
+			}
+		},
+		"payerList": {
+			"button": {
+				"add": "Zähler hinzufügen",
+				"deleteAll": "Alle Zahler löschen",
+				"deleteSelected": "Ausgewählte Zahler löschen",
+				"select": "Zahler auswählen"
+			},
+			"modal": {
+				"form": {
+					"addChildren": "Freund hinzufügen",
+					"childrenName": "Name des Freundes",
+					"childrenNameError": "Bitte geben Sie den Namen des Freundes ein",
+					"delete": "Zähler löschen",
+					"hasChildren": "ein Freund kam mit",
+					"name": "Name des Zahlers",
+					"nameError": "Bitte geben Sie den Namen des Zahlers ein"
+				},
+				"title": {
+					"add": "Neuen Zahler hinzufügen",
+					"edit": "Zähler bearbeiten"
+				}
+			},
+			"popup": {
+				"deleteAll": "Möchten Sie alle Zahler löschen?",
+				"deleteSelected": "Möchten Sie ausgewählte(n) {{count}} Zahler löschen?"
+			},
+			"table": {
+				"name": "Name"
+			}
+		},
+		"tab": {
+			"itemList": "Artikel",
+			"payerList": "Zahler"
+		}
+	}
+}

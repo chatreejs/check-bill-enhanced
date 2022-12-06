@@ -1,0 +1,81 @@
+{
+	"common": {
+		"button": {
+			"cancel": "취소",
+			"delete": "지우다",
+			"next": "다음 것",
+			"ok": "승인",
+			"save": "구하다"
+		}
+	},
+	"home": {
+		"billTitle": "청구서 이름",
+		"itemList": {
+			"button": {
+				"add": "아이템 추가",
+				"addFromBill": "청구서에서 추가",
+				"deleteAll": "모든 항목 삭제",
+				"deleteSelected": "선택한 항목 삭제",
+				"select": "항목 선택"
+			},
+			"modal": {
+				"form": {
+					"delete": "항목 삭제",
+					"name": "상품명",
+					"nameError": "아이템명을 입력해주세요",
+					"price": "단가",
+					"priceError": "아이템 가격을 입력해주세요",
+					"quantity": "수량",
+					"quantityError": "아이템 수량을 입력해주세요"
+				},
+				"title": {
+					"add": "새 항목 추가",
+					"edit": "항목 수정"
+				}
+			},
+			"popup": {
+				"deleteAll": "모든 항목을 삭제하시겠습니까?",
+				"deleteSelected": "선택한 {{count}} 개 항목을 삭제하시겠습니까?"
+			},
+			"table": {
+				"name": "이름",
+				"price": "단가",
+				"quantity": "수량"
+			}
+		},
+		"payerList": {
+			"button": {
+				"add": "지불인 추가",
+				"deleteAll": "모든 지불인 삭제",
+				"deleteSelected": "선택한 지불인 삭제",
+				"select": "지불인 선택"
+			},
+			"modal": {
+				"form": {
+					"addChildren": "친구 추가",
+					"childrenName": "친구 이름",
+					"childrenNameError": "친구이름을 입력해주세요",
+					"delete": "지불인 삭제",
+					"hasChildren": "친구가 함께 왔다",
+					"name": "지불인 이름",
+					"nameError": "입금자명을 입력해주세요"
+				},
+				"title": {
+					"add": "새 지불인 추가",
+					"edit": "지불인 편집"
+				}
+			},
+			"popup": {
+				"deleteAll": "모든 지급인을 삭제하시겠습니까?",
+				"deleteSelected": "선택한 {{count}} 지불인을 삭제하시겠습니까?"
+			},
+			"table": {
+				"name": "이름"
+			}
+		},
+		"tab": {
+			"itemList": "목",
+			"payerList": "지불인"
+		}
+	}
+}
