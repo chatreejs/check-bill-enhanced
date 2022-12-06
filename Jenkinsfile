@@ -3,13 +3,25 @@ pipeline {
 
   environment {
     DOCKER_TAG = getDockerTag()
-    IMAGE_URL_WITH_TAG = "chatreejs/check-bill-enhanced:${DOCKER_TAG}"
+    IMAGE_URL = "chatreejs/check-bill-enhanced"
   }
 
   stages {
     stage('Quality Check') {
       steps {
         sh 'echo "Quality Check"'
+      }
+    }
+
+    stage('Setup Environment') {
+      steps {
+        script {
+          if (env.BRANCH_NAME == 'main') {
+            env.IMAGE_URL_WITH_TAG = "${IMAGE_URL}:${DOCKER_TAG}"
+          } else {
+            env.IMAGE_URL_WITH_TAG = "${IMAGE_URL}:${DOCKER_TAG}-${BUILD_NUMBER}"
+          }
+        }
       }
     }
 
@@ -33,7 +45,10 @@ pipeline {
 
     stage('Push to registry') {
       when {
-        branch 'main'
+        anyOf {
+          branch 'main'
+          branch 'develop'
+        }
       }
       steps {
         withCredentials([usernamePassword(credentialsId: 'docker-hub-credential', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
