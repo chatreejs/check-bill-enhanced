@@ -7,6 +7,7 @@ import {
   Payer,
   updateAllControlValueAndValidity,
 } from 'src/app/core';
+import { BillService } from 'src/app/core/services';
 import { v4 as uuidv4 } from 'uuid';
 
 @Component({
@@ -19,7 +20,6 @@ export class PayerListModalComponent implements OnInit {
   @Input() id?: string;
 
   payerListForm!: FormGroup;
-  hasChildren: boolean = false;
 
   get modalType(): typeof ModalType {
     return ModalType;
@@ -29,7 +29,15 @@ export class PayerListModalComponent implements OnInit {
     return this.payerListForm.get('childrenForm') as FormArray;
   }
 
-  constructor(private modal: NzModalRef, private fb: FormBuilder) {}
+  get hasChildren(): boolean {
+    return this.payerListForm.value.hasChildren;
+  }
+
+  constructor(
+    private modal: NzModalRef,
+    private fb: FormBuilder,
+    private billService: BillService,
+  ) {}
 
   ngOnInit(): void {
     this.payerListForm = this.fb.group({
@@ -44,49 +52,37 @@ export class PayerListModalComponent implements OnInit {
   }
 
   initFormData(): void {
-    // Mock data
-    // TODO: Use NgRx to get data from store
-    const mockData: Payer = {
-      id: uuidv4(),
-      name: 'ชานนท์',
-      children: [
-        {
-          id: uuidv4(),
-          name: 'ลิง',
-        },
-      ],
-    };
-    this.payerListForm.patchValue({
-      id: mockData.id,
-      name: mockData.name,
-      hasChildren: mockData.children.length > 0,
+    this.billService.getBillPayer(this.id!).subscribe((payer) => {
+      if (payer) {
+        this.payerListForm.patchValue({
+          id: payer.id,
+          name: payer.name,
+          hasChildren: payer.children.length > 0,
+        });
+        if (payer.children.length > 0) {
+          payer.children.forEach((child) => {
+            this.childrenForm.push(
+              this.fb.group({
+                id: [child.id],
+                name: [child.name, Validators.required],
+              }),
+            );
+          });
+        }
+      }
     });
-    if (mockData.children.length > 0) {
-      this.hasChildren = true;
-      mockData.children.forEach((child) => {
-        this.childrenForm.push(
-          this.fb.group({
-            id: [child.id],
-            name: [child.name, Validators.required],
-          }),
-        );
-      });
-    }
   }
 
   childrenChange(value: boolean): void {
-    this.hasChildren = value;
-    if (value) {
+    if (this.childrenForm.length === 0) {
       this.addChildrenForm();
-    } else {
-      this.childrenForm.clear();
     }
   }
 
   addChildrenForm(): void {
     this.childrenForm.push(
       this.fb.group({
-        id: [null],
+        id: [uuidv4()],
         name: ['', Validators.required],
       }),
     );
@@ -98,12 +94,26 @@ export class PayerListModalComponent implements OnInit {
 
   savePayer(): void {
     if (this.payerListForm.valid) {
+      const payer: Payer = {
+        id: '',
+        name: this.payerListForm.value.name,
+        children: [],
+      };
+      if (this.hasChildren) {
+        this.childrenForm.value.forEach((child: any) => {
+          payer.children.push({
+            id: child.id,
+            name: child.name,
+          });
+        });
+      }
       if (this.type === ModalType.Create) {
-        this.payerListForm.controls['id'].setValue(uuidv4());
-        console.log('submit:: Create', this.payerListForm.value);
+        payer.id = uuidv4();
+        this.billService.createBillPayer(payer);
         this.modal.close();
       } else {
-        console.log('submit:: Update', this.payerListForm.value);
+        payer.id = this.payerListForm.value.id;
+        this.billService.updateBillPayer(payer);
         this.modal.close();
       }
     } else {
@@ -113,7 +123,7 @@ export class PayerListModalComponent implements OnInit {
   }
 
   deletePayer(): void {
-    console.log('delete');
+    this.billService.deleteBillPayer(this.id!);
     this.modal.close();
   }
 

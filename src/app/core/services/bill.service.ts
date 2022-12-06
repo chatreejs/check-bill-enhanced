@@ -1,7 +1,7 @@
 import { Injectable, isDevMode } from '@angular/core';
 import { BehaviorSubject, map, Observable } from 'rxjs';
 import { CryptoService } from '.';
-import { Bill, BillItem } from '../models';
+import { Bill, BillItem, Payer } from '../models';
 
 const LS_BILL = 'bp-bill';
 
@@ -12,6 +12,7 @@ export class BillService {
   private bill = new BehaviorSubject<Bill>({
     title: '',
     items: [],
+    payers: [],
   });
 
   private bill$ = this.bill.asObservable();
@@ -94,6 +95,47 @@ export class BillService {
   deleteAllBillItems() {
     const bill = this.billStorage;
     bill.items = [];
+    this.bill.next(bill);
+  }
+
+  getBillPayers(): Observable<Payer[]> {
+    return this.bill$.pipe(map((bill) => bill.payers));
+  }
+
+  getBillPayer(id: string): Observable<Payer | undefined> {
+    return this.bill$.pipe(
+      map((bill) => bill.payers.find((payer) => payer.id === id)),
+    );
+  }
+
+  createBillPayer(payer: Payer) {
+    const bill = this.billStorage;
+    bill.payers.push(payer);
+    this.bill.next(bill);
+  }
+
+  updateBillPayer(payer: Payer) {
+    const bill = this.billStorage;
+    const index = bill.payers.findIndex((p) => p.id === payer.id);
+    bill.payers[index] = payer;
+    this.bill.next(bill);
+  }
+
+  deleteBillPayer(id: string) {
+    const bill = this.billStorage;
+    bill.payers = bill.payers.filter((payer) => payer.id !== id);
+    this.bill.next(bill);
+  }
+
+  deleteBillPayers(ids: string[]) {
+    const bill = this.billStorage;
+    bill.payers = bill.payers.filter((payer) => !ids.includes(payer.id));
+    this.bill.next(bill);
+  }
+
+  deleteAllBillPayers() {
+    const bill = this.billStorage;
+    bill.payers = [];
     this.bill.next(bill);
   }
 }

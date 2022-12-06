@@ -3,7 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { ModalType } from 'src/app/core/enums';
 import { Payer } from 'src/app/core/models';
-import { v4 as uuidv4 } from 'uuid';
+import { BillService } from 'src/app/core/services';
 import { PayerListModalComponent } from './payer-list-modal/payer-list-modal.component';
 @Component({
   selector: 'app-payer-list',
@@ -14,27 +14,7 @@ export class PayerListComponent implements OnInit {
   isShowCheckbox: boolean = false;
   isAllChecked: boolean = false;
   isIndeterminate: boolean = false;
-  listOfPayer: Payer[] = [
-    {
-      id: uuidv4(),
-      name: 'ชานนท์',
-      children: [
-        {
-          id: uuidv4(),
-          name: 'อุ้ย',
-        },
-        {
-          id: uuidv4(),
-          name: 'เค',
-        },
-      ],
-    },
-    {
-      id: uuidv4(),
-      name: 'ต้นตุง',
-      children: [],
-    },
-  ];
+  listOfPayer: Payer[] = [];
   setOfCheckedId: Set<string> = new Set<string>();
   expandSet = new Set<string>();
 
@@ -43,12 +23,17 @@ export class PayerListComponent implements OnInit {
   }
 
   constructor(
+    private billService: BillService,
     private modalService: NzModalService,
     private translate: TranslateService,
     private viewContainerRef: ViewContainerRef,
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.billService.getBillPayers().subscribe((payer) => {
+      this.listOfPayer = payer;
+    });
+  }
 
   toggleCheckbox(): void {
     this.isShowCheckbox = !this.isShowCheckbox;
@@ -94,7 +79,11 @@ export class PayerListComponent implements OnInit {
   }
 
   deleteItemList(): void {
-    console.log(this.setOfCheckedId);
+    if (this.setOfCheckedId.size === 0) {
+      this.billService.deleteAllBillPayers();
+    } else {
+      this.billService.deleteBillPayers([...this.setOfCheckedId]);
+    }
     this.toggleCheckbox();
   }
 

@@ -1,5 +1,5 @@
 <div class="table-wrapper">
-  <div class="action-button">
+  <div *ngIf="listOfPayer.length > 0" class="action-button">
     <button
       *ngIf="isShowCheckbox"
       nz-button
@@ -71,7 +71,10 @@
             <span *ngIf="data.children.length > 0">และเพื่อน</span>
           </td>
         </tr>
-        <tr [nzExpand]="expandSet.has(data.id)">
+        <tr
+          [nzExpand]="expandSet.has(data.id)"
+          (click)="openPayerListModal(modalType.Update, data.id)"
+        >
           <nz-tag *ngFor="let child of data.children">{{ child.name }}</nz-tag>
         </tr>
       </ng-container>
