@@ -8,6 +8,8 @@
         [placeholder]="'home.billTitle' | translate"
         nzBorderless
         [(ngModel)]="billName"
+        [ngModelOptions]="{ updateOn: 'blur' }"
+        (ngModelChange)="updateBillName($event)"
       />
       <div class="bill-content">
         <nz-tabset nzCentered>

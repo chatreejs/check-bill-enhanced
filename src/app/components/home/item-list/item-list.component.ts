@@ -1,9 +1,9 @@
-import { Component, ViewContainerRef } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { ModalType } from 'src/app/core/enums';
 import { BillItem } from 'src/app/core/models';
-import { v4 as uuidv4 } from 'uuid';
+import { BillService } from 'src/app/core/services';
 import { ItemListModalComponent } from './item-list-modal/item-list-modal.component';
 
 @Component({
@@ -11,30 +11,11 @@ import { ItemListModalComponent } from './item-list-modal/item-list-modal.compon
   templateUrl: './item-list.component.html',
   styleUrls: ['./item-list.component.scss'],
 })
-export class ItemListComponent {
+export class ItemListComponent implements OnInit {
   isShowCheckbox: boolean = false;
   isAllChecked: boolean = false;
   isIndeterminate: boolean = false;
-  listOfBillItem: readonly BillItem[] = [
-    {
-      id: uuidv4(),
-      name: 'น้ำแข็ง',
-      quantity: 2,
-      price: 60,
-    },
-    {
-      id: uuidv4(),
-      name: 'ช้างทาวเวอร์',
-      quantity: 3,
-      price: 670,
-    },
-    {
-      id: uuidv4(),
-      name: 'ส่วนลด VIP',
-      quantity: 1,
-      price: -100,
-    },
-  ];
+  listOfBillItem: readonly BillItem[] = [];
   setOfCheckedId: Set<string> = new Set<string>();
 
   get modalType(): typeof ModalType {
@@ -42,10 +23,17 @@ export class ItemListComponent {
   }
 
   constructor(
+    private billService: BillService,
     private modalService: NzModalService,
     private translate: TranslateService,
     private viewContainerRef: ViewContainerRef,
   ) {}
+
+  ngOnInit(): void {
+    this.billService.getBillItems().subscribe((item) => {
+      this.listOfBillItem = item;
+    });
+  }
 
   toggleCheckbox(): void {
     this.isShowCheckbox = !this.isShowCheckbox;
@@ -85,7 +73,11 @@ export class ItemListComponent {
   }
 
   deleteItemList(): void {
-    console.log(this.setOfCheckedId);
+    if (this.setOfCheckedId.size === 0) {
+      this.billService.deleteAllBill();
+    } else {
+      this.billService.deleteBillItems([...this.setOfCheckedId]);
+    }
     this.toggleCheckbox();
   }
 

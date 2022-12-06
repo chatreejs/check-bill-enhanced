@@ -2,12 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import {
-  BillItem,
   markAllControlsAsDirty,
   ModalType,
   updateAllControlValueAndValidity,
 } from 'src/app/core';
-
+import { BillService } from 'src/app/core/services';
 import { v4 as uuidv4 } from 'uuid';
 
 @Component({
@@ -25,7 +24,11 @@ export class ItemListModalComponent implements OnInit {
     return ModalType;
   }
 
-  constructor(private modal: NzModalRef, private fb: FormBuilder) {}
+  constructor(
+    private modal: NzModalRef,
+    private fb: FormBuilder,
+    private billService: BillService,
+  ) {}
 
   ngOnInit(): void {
     this.itemListForm = this.fb.group({
@@ -43,19 +46,10 @@ export class ItemListModalComponent implements OnInit {
   }
 
   initFormData(): void {
-    // Mock data
-    // TODO: Use NgRx to get data from store
-    const mockData: BillItem = {
-      id: uuidv4(),
-      name: 'น้ำแข็ง',
-      quantity: 2,
-      price: 60,
-    };
-    this.itemListForm.patchValue({
-      id: mockData.id,
-      name: mockData.name,
-      quantity: mockData.quantity,
-      price: mockData.price,
+    this.billService.getBillItem(this.id!).subscribe((item) => {
+      if (item) {
+        this.itemListForm.patchValue(item);
+      }
     });
   }
 
@@ -63,10 +57,10 @@ export class ItemListModalComponent implements OnInit {
     if (this.itemListForm.valid) {
       if (this.type === ModalType.Create) {
         this.itemListForm.controls['id'].setValue(uuidv4());
-        console.log('submit:: Create', this.itemListForm.value);
+        this.billService.createBillItem(this.itemListForm.value);
         this.modal.close();
       } else {
-        console.log('submit:: Update', this.itemListForm.value);
+        this.billService.updateBillItem(this.itemListForm.value);
         this.modal.close();
       }
     } else {
@@ -76,7 +70,7 @@ export class ItemListModalComponent implements OnInit {
   }
 
   deleteItem(): void {
-    console.log('delete');
+    this.billService.deleteBillItem(this.id!);
     this.modal.close();
   }
 
