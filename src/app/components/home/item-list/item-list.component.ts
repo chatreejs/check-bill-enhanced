@@ -74,7 +74,7 @@ export class ItemListComponent implements OnInit {
 
   deleteItemList(): void {
     if (this.setOfCheckedId.size === 0) {
-      this.billService.deleteAllBill();
+      this.billService.deleteAllBillItems();
     } else {
       this.billService.deleteBillItems([...this.setOfCheckedId]);
     }

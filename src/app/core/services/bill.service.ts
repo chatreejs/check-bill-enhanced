@@ -91,7 +91,7 @@ export class BillService {
     this.bill.next(bill);
   }
 
-  deleteAllBill() {
+  deleteAllBillItems() {
     const bill = this.billStorage;
     bill.items = [];
     this.bill.next(bill);
