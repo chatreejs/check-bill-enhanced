@@ -46,12 +46,14 @@ export class BillService {
     });
   }
 
-  setBillTitle(title: string) {
-    return this.bill.next({ title, items: [] });
-  }
-
   getBillTitle(): Observable<string> {
     return this.bill$.pipe(map((bill) => bill.title));
+  }
+
+  updateBillTitle(title: string) {
+    const bill = this.billStorage;
+    bill.title = title;
+    this.bill.next(bill);
   }
 
   getBillItems(): Observable<BillItem[]> {

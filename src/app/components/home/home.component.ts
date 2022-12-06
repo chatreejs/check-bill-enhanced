@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
   }
 
   updateBillName(value: string) {
-    this.billService.setBillTitle(value);
+    this.billService.updateBillTitle(value);
   }
 
   next() {
