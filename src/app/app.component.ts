@@ -1,6 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { Event, NavigationEnd, Router } from '@angular/router';
+import { SwUpdate } from '@angular/service-worker';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +19,13 @@ export class AppComponent implements OnInit {
     private elementRef: ElementRef,
     private router: Router,
     private location: Location,
+    private swUpdate: SwUpdate,
   ) {
+    if (this.swUpdate.isEnabled) {
+      this.swUpdate.versionUpdates.subscribe(() => {
+        window.location.reload();
+      });
+    }
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
         this.currentUrl = event.url;
