@@ -19,7 +19,9 @@ pipeline {
           if (env.BRANCH_NAME == 'main') {
             env.IMAGE_URL_WITH_TAG = "${IMAGE_URL}:${DOCKER_TAG}"
           } else {
-            env.IMAGE_URL_WITH_TAG = "${IMAGE_URL}:${DOCKER_TAG}-${BUILD_NUMBER}"
+            def now = new Date()
+            BUILD_DATE = now.format("yyyyMMdd", TimeZone.getTimeZone('UTC'))
+            env.IMAGE_URL_WITH_TAG = "${IMAGE_URL}:${DOCKER_TAG}-${BUILD_DATE}"
           }
         }
       }
