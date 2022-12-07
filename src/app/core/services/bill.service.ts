@@ -39,8 +39,12 @@ export class BillService {
   }
 
   constructor(private cryptoService: CryptoService) {
-    if (Object.keys(this.billStorage).length > 0) {
-      this.bill.next(this.billStorage);
+    try {
+      if (Object.keys(this.billStorage).length > 0) {
+        this.bill.next(this.billStorage);
+      }
+    } catch (error) {
+      localStorage.removeItem(LS_BILL);
     }
     this.bill$.subscribe((bill) => {
       this.billStorage = bill;
