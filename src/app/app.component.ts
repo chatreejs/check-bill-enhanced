@@ -1,7 +1,8 @@
 import { Location } from '@angular/common';
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { Event, NavigationEnd, Router } from '@angular/router';
-import { SwUpdate } from '@angular/service-worker';
+import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,10 @@ export class AppComponent implements OnInit {
     private swUpdate: SwUpdate,
   ) {
     if (this.swUpdate.isEnabled) {
-      this.swUpdate.versionUpdates.subscribe(() => {
+      const updatesAvailable = swUpdate.versionUpdates.pipe(
+        filter((evt): evt is VersionReadyEvent => evt.type === 'VERSION_READY'),
+      );
+      updatesAvailable.subscribe(() => {
         window.location.reload();
       });
     }
