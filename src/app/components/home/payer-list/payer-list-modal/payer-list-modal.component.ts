@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NzModalRef } from 'ng-zorro-antd/modal';
+import { take } from 'rxjs';
 import {
   markAllControlsAsDirty,
   ModalType,
@@ -52,7 +53,10 @@ export class PayerListModalComponent implements OnInit {
   }
 
   initFormData(): void {
-    this.billService.getBillPayer(this.id!).subscribe((payer) => {
+    this.billService
+      .getBillPayer(this.id!)
+      .pipe(take(1))
+      .subscribe((payer) => {
       if (payer) {
         this.payerListForm.patchValue({
           id: payer.id,

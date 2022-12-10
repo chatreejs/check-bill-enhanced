@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewContainerRef } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
+import { Subscription } from 'rxjs';
 import { ModalType } from 'src/app/core/enums';
 import { BillItem } from 'src/app/core/models';
 import { BillService } from 'src/app/core/services';
@@ -11,12 +12,14 @@ import { ItemListModalComponent } from './item-list-modal/item-list-modal.compon
   templateUrl: './item-list.component.html',
   styleUrls: ['./item-list.component.scss'],
 })
-export class ItemListComponent implements OnInit {
+export class ItemListComponent implements OnInit, OnDestroy {
   isShowCheckbox: boolean = false;
   isAllChecked: boolean = false;
   isIndeterminate: boolean = false;
   listOfBillItem: readonly BillItem[] = [];
   setOfCheckedId: Set<string> = new Set<string>();
+
+  private subscription!: Subscription;
 
   get modalType(): typeof ModalType {
     return ModalType;
@@ -30,7 +33,7 @@ export class ItemListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.billService.getBillItems().subscribe((item) => {
+    this.subscription = this.billService.getBillItems().subscribe((item) => {
       this.listOfBillItem = item;
     });
   }
@@ -113,4 +116,8 @@ export class ItemListComponent implements OnInit {
   }
 
   openItemListFromBillModal(): void {}
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 }

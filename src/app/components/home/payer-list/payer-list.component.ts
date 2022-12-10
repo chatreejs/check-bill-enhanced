@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewContainerRef } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
+import { Subscription } from 'rxjs';
 import { ModalType } from 'src/app/core/enums';
 import { Payer } from 'src/app/core/models';
 import { BillService } from 'src/app/core/services';
@@ -10,13 +11,15 @@ import { PayerListModalComponent } from './payer-list-modal/payer-list-modal.com
   templateUrl: './payer-list.component.html',
   styleUrls: ['./payer-list.component.scss'],
 })
-export class PayerListComponent implements OnInit {
+export class PayerListComponent implements OnInit, OnDestroy {
   isShowCheckbox: boolean = false;
   isAllChecked: boolean = false;
   isIndeterminate: boolean = false;
   listOfPayer: Payer[] = [];
   setOfCheckedId: Set<string> = new Set<string>();
   expandSet = new Set<string>();
+
+  private subscription!: Subscription;
 
   get modalType(): typeof ModalType {
     return ModalType;
@@ -30,7 +33,7 @@ export class PayerListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.billService.getBillPayers().subscribe((payer) => {
+    this.subscription = this.billService.getBillPayers().subscribe((payer) => {
       this.listOfPayer = payer;
     });
   }
@@ -116,5 +119,9 @@ export class PayerListComponent implements OnInit {
         },
       ],
     });
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }

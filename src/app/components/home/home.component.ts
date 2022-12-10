@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subject } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { BillService } from 'src/app/core/services';
 
 @Component({
@@ -8,9 +8,10 @@ import { BillService } from 'src/app/core/services';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
   billName: string = '';
-  billNameChanged: Subject<string> = new Subject<string>();
+
+  private subscription!: Subscription;
 
   get buttonDisabled(): boolean {
     return false;
@@ -19,7 +20,7 @@ export class HomeComponent implements OnInit {
   constructor(private router: Router, private billService: BillService) {}
 
   ngOnInit(): void {
-    this.billService.getBillTitle().subscribe((value) => {
+    this.subscription = this.billService.getBillTitle().subscribe((value) => {
       this.billName = value;
     });
   }
@@ -30,5 +31,9 @@ export class HomeComponent implements OnInit {
 
   next() {
     this.router.navigate(['bill']);
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }
