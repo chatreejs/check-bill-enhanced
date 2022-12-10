@@ -8,6 +8,7 @@ import {
   updateAllControlValueAndValidity,
 } from 'src/app/core';
 import { BillService } from 'src/app/core/services';
+import { BillItemValidator } from 'src/app/core/validators';
 import { v4 as uuidv4 } from 'uuid';
 
 @Component({
@@ -34,7 +35,11 @@ export class ItemListModalComponent implements OnInit {
   ngOnInit(): void {
     this.itemListForm = this.fb.group({
       id: [null],
-      name: ['', Validators.required],
+      name: [
+        '',
+        Validators.required,
+        BillItemValidator.validateName(this.billService, this.id!),
+      ],
       quantity: [
         null,
         Validators.compose([Validators.required, Validators.min(0)]),
@@ -51,10 +56,10 @@ export class ItemListModalComponent implements OnInit {
       .getBillItem(this.id!)
       .pipe(take(1))
       .subscribe((item) => {
-      if (item) {
-        this.itemListForm.patchValue(item);
-      }
-    });
+        if (item) {
+          this.itemListForm.patchValue(item);
+        }
+      });
   }
 
   saveItem(): void {

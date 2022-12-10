@@ -1,7 +1,7 @@
 import { Injectable, isDevMode } from '@angular/core';
 import { BehaviorSubject, map, Observable } from 'rxjs';
 import { CryptoService } from '.';
-import { Bill, BillItem, Payer } from '../models';
+import { Bill, BillItem, Payer, PayerChildren } from '../models';
 
 const LS_BILL = 'bp-bill';
 
@@ -71,6 +71,12 @@ export class BillService {
     );
   }
 
+  getBillItemByName(name: string): Observable<BillItem | undefined> {
+    return this.bill$.pipe(
+      map((bill) => bill.items.find((item) => item.name === name)),
+    );
+  }
+
   createBillItem(item: BillItem) {
     const bill = this.billStorage;
     bill.items.push(item);
@@ -109,6 +115,18 @@ export class BillService {
   getBillPayer(id: string): Observable<Payer | undefined> {
     return this.bill$.pipe(
       map((bill) => bill.payers.find((payer) => payer.id === id)),
+    );
+  }
+
+  getBillPayerByName(name: string): Observable<Payer | undefined> {
+    return this.bill$.pipe(
+      map((bill) => bill.payers.find((payer) => payer.name === name)),
+    );
+  }
+
+  getBillPayerChildren(id: string): Observable<PayerChildren[] | undefined> {
+    return this.bill$.pipe(
+      map((bill) => bill.payers.find((payer) => payer.id === id)?.children),
     );
   }
 

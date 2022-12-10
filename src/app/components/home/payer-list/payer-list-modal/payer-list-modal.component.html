@@ -3,12 +3,16 @@
     <nz-form-label [nzSm]="6" [nzXs]="12" nzRequired nzFor="name"
       >{{ 'home.payerList.modal.form.name' | translate }}
     </nz-form-label>
-    <nz-form-control
-      [nzSm]="14"
-      [nzXs]="24"
-      [nzErrorTip]="'home.payerList.modal.form.nameError' | translate"
-    >
+    <nz-form-control [nzSm]="14" [nzXs]="24" [nzErrorTip]="nameErrorTpl">
       <input nz-input formControlName="name" id="name" />
+      <ng-template #nameErrorTpl let-control>
+        <ng-container *ngIf="control.hasError('required')">{{
+          'home.payerList.modal.form.nameError' | translate
+        }}</ng-container>
+        <ng-container *ngIf="control.hasError('duplicated')">{{
+          'home.payerList.modal.form.nameDuplicated' | translate
+        }}</ng-container>
+      </ng-template>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
@@ -36,9 +40,7 @@
             <nz-form-control
               [nzSm]="14"
               [nzXs]="24"
-              [nzErrorTip]="
-                'home.payerList.modal.form.childrenNameError' | translate
-              "
+              [nzErrorTip]="childrenNameErrorTpl"
             >
               <div nz-row [nzGutter]="6">
                 <div nz-col [nzSpan]="20">
@@ -47,6 +49,15 @@
                     formControlName="name"
                     [id]="'childrenName' + i"
                   />
+                  <ng-template #childrenNameErrorTpl let-control>
+                    <ng-container *ngIf="control.hasError('required')">{{
+                      'home.payerList.modal.form.childrenNameError' | translate
+                    }}</ng-container>
+                    <ng-container *ngIf="control.hasError('duplicated')">{{
+                      'home.payerList.modal.form.childrenNameDuplicated'
+                        | translate
+                    }}</ng-container>
+                  </ng-template>
                 </div>
                 <div nz-col [nzSpan]="4">
                   <button

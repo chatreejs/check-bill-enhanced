@@ -22,6 +22,7 @@
 				"form": {
 					"delete": "항목 삭제",
 					"name": "상품명",
+					"nameDuplicated": "이 항목 이름은 이미 존재합니다",
 					"nameError": "아이템명을 입력해주세요",
 					"price": "단가",
 					"priceError": "아이템 가격을 입력해주세요",
@@ -54,10 +55,12 @@
 				"form": {
 					"addChildren": "친구 추가",
 					"childrenName": "친구 이름",
+					"childrenNameDuplicated": "이 친구 이름은 이미 존재합니다",
 					"childrenNameError": "친구이름을 입력해주세요",
 					"delete": "지불인 삭제",
 					"hasChildren": "친구가 함께 왔다",
 					"name": "지불인 이름",
+					"nameDuplicated": "이 지급인 이름은 이미 존재합니다.",
 					"nameError": "입금자명을 입력해주세요"
 				},
 				"title": {

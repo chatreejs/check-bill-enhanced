@@ -22,6 +22,7 @@
 				"form": {
 					"delete": "アイテムを削除",
 					"name": "項目名",
+					"nameDuplicated": "このアイテム名は既に存在します",
 					"nameError": "アイテム名を入力してください",
 					"price": "単価",
 					"priceError": "商品価格を入力してください",
@@ -54,10 +55,12 @@
 				"form": {
 					"addChildren": "友人を追加する",
 					"childrenName": "友達の名前",
+					"childrenNameDuplicated": "このフレンド名は既に存在します",
 					"childrenNameError": "フレンド名を入力してください",
 					"delete": "支払人を削除",
 					"hasChildren": "友達が一緒に来ました",
 					"name": "支払人名",
+					"nameDuplicated": "この支払人名は既に存在します",
 					"nameError": "支払人名を入力してください"
 				},
 				"title": {

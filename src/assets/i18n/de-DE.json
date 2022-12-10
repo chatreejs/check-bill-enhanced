@@ -22,6 +22,7 @@
 				"form": {
 					"delete": "Element löschen",
 					"name": "Artikelname",
+					"nameDuplicated": "Dieser Artikelname existiert bereits",
 					"nameError": "Bitte geben Sie den Artikelnamen ein",
 					"price": "Stückpreis",
 					"priceError": "Bitte Artikelpreis eingeben",
@@ -54,10 +55,12 @@
 				"form": {
 					"addChildren": "Freund hinzufügen",
 					"childrenName": "Name des Freundes",
+					"childrenNameDuplicated": "Dieser Freundname existiert bereits",
 					"childrenNameError": "Bitte geben Sie den Namen des Freundes ein",
 					"delete": "Zähler löschen",
 					"hasChildren": "ein Freund kam mit",
 					"name": "Name des Zahlers",
+					"nameDuplicated": "Dieser Zahlername existiert bereits",
 					"nameError": "Bitte geben Sie den Namen des Zahlers ein"
 				},
 				"title": {

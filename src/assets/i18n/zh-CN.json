@@ -22,6 +22,7 @@
 				"form": {
 					"delete": "删除项目",
 					"name": "项目名称",
+					"nameDuplicated": "该项目名称已存在",
 					"nameError": "请输入商品名称",
 					"price": "单价",
 					"priceError": "请输入商品价格",
@@ -54,10 +55,12 @@
 				"form": {
 					"addChildren": "添加好友",
 					"childrenName": "好友名称",
+					"childrenNameDuplicated": "此好友名称已存在",
 					"childrenNameError": "请输入朋友姓名",
 					"delete": "删除付款人",
 					"hasChildren": "一个朋友来了",
 					"name": "付款人名称",
+					"nameDuplicated": "此付款人名称已存在",
 					"nameError": "请输入付款人姓名"
 				},
 				"title": {

@@ -3,12 +3,16 @@
     <nz-form-label [nzSm]="6" [nzXs]="12" nzRequired nzFor="name"
       >{{ 'home.itemList.modal.form.name' | translate }}
     </nz-form-label>
-    <nz-form-control
-      [nzSm]="14"
-      [nzXs]="24"
-      [nzErrorTip]="'home.itemList.modal.form.nameError' | translate"
-    >
+    <nz-form-control [nzSm]="14" [nzXs]="24" [nzErrorTip]="nameErrorTpl">
       <input nz-input formControlName="name" id="name" />
+      <ng-template #nameErrorTpl let-control>
+        <ng-container *ngIf="control.hasError('required')">{{
+          'home.itemList.modal.form.nameError' | translate
+        }}</ng-container>
+        <ng-container *ngIf="control.hasError('duplicated')">{{
+          'home.itemList.modal.form.nameDuplicated' | translate
+        }}</ng-container>
+      </ng-template>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>

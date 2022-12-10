@@ -22,6 +22,7 @@
 				"form": {
 					"delete": "Delete item",
 					"name": "Item name",
+					"nameDuplicated": "This item name already exists",
 					"nameError": "Please input item name",
 					"price": "Unit Price",
 					"priceError": "Please input item price",
@@ -54,10 +55,12 @@
 				"form": {
 					"addChildren": "Add friend",
 					"childrenName": "Friend name",
+					"childrenNameDuplicated": "This friend name already exists",
 					"childrenNameError": "Please input friend name",
 					"delete": "Delete payer",
 					"hasChildren": "a friend came with",
 					"name": "Payer name",
+					"nameDuplicated": "This payer name already exists",
 					"nameError": "Please input payer name"
 				},
 				"title": {

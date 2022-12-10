@@ -9,6 +9,7 @@ import {
   updateAllControlValueAndValidity,
 } from 'src/app/core';
 import { BillService } from 'src/app/core/services';
+import { PayerValidator } from 'src/app/core/validators';
 import { v4 as uuidv4 } from 'uuid';
 
 @Component({
@@ -43,7 +44,11 @@ export class PayerListModalComponent implements OnInit {
   ngOnInit(): void {
     this.payerListForm = this.fb.group({
       id: [null],
-      name: ['', Validators.required],
+      name: [
+        '',
+        Validators.required,
+        PayerValidator.validateName(this.billService, this.id!),
+      ],
       hasChildren: [false],
       childrenForm: this.fb.array([]),
     });
@@ -57,24 +62,32 @@ export class PayerListModalComponent implements OnInit {
       .getBillPayer(this.id!)
       .pipe(take(1))
       .subscribe((payer) => {
-      if (payer) {
-        this.payerListForm.patchValue({
-          id: payer.id,
-          name: payer.name,
-          hasChildren: payer.children.length > 0,
-        });
-        if (payer.children.length > 0) {
-          payer.children.forEach((child) => {
-            this.childrenForm.push(
-              this.fb.group({
-                id: [child.id],
-                name: [child.name, Validators.required],
-              }),
-            );
+        if (payer) {
+          this.payerListForm.patchValue({
+            id: payer.id,
+            name: payer.name,
+            hasChildren: payer.children.length > 0,
           });
+          if (payer.children.length > 0) {
+            payer.children.forEach((child) => {
+              this.childrenForm.push(
+                this.fb.group({
+                  id: [child.id],
+                  name: [
+                    child.name,
+                    Validators.required,
+                    PayerValidator.validateChildrenName(
+                      this.billService,
+                      payer.id!,
+                      child.id!,
+                    ),
+                  ],
+                }),
+              );
+            });
+          }
         }
-      }
-    });
+      });
   }
 
   childrenChange(value: boolean): void {
@@ -84,10 +97,19 @@ export class PayerListModalComponent implements OnInit {
   }
 
   addChildrenForm(): void {
+    const childrenId = uuidv4();
     this.childrenForm.push(
       this.fb.group({
-        id: [uuidv4()],
-        name: ['', Validators.required],
+        id: [childrenId],
+        name: [
+          '',
+          Validators.required,
+          PayerValidator.validateChildrenName(
+            this.billService,
+            this.id!,
+            childrenId,
+          ),
+        ],
       }),
     );
   }
