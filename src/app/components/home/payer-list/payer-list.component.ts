@@ -1,7 +1,9 @@
 import { Component, OnDestroy, OnInit, ViewContainerRef } from '@angular/core';
+
 import { TranslateService } from '@ngx-translate/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { Subscription } from 'rxjs';
+
 import { ModalType } from 'src/app/core/enums';
 import { Payer } from 'src/app/core/models';
 import { BillService } from 'src/app/core/services';

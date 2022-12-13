@@ -1,7 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { take } from 'rxjs';
+import { v4 as uuidv4 } from 'uuid';
+
 import {
   markAllControlsAsDirty,
   ModalType,
@@ -10,7 +13,6 @@ import {
 } from 'src/app/core';
 import { BillService } from 'src/app/core/services';
 import { PayerValidator } from 'src/app/core/validators';
-import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-payer-list-modal',

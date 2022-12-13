@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class BillComponent {
   constructor(private router: Router) {}
+
   next() {
     this.router.navigate(['result']);
   }

@@ -2,6 +2,7 @@ import { Location } from '@angular/common';
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { Event, NavigationEnd, Router } from '@angular/router';
 import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
+
 import { filter } from 'rxjs';
 
 @Component({
