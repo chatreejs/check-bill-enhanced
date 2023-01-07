@@ -1,8 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormArray,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  ValidationErrors,
+  Validators,
+} from '@angular/forms';
 
 import { NzModalRef } from 'ng-zorro-antd/modal';
-import { take } from 'rxjs';
+import { Observable, Observer, take } from 'rxjs';
 import { v4 as uuidv4 } from 'uuid';
 
 import {
@@ -49,7 +56,7 @@ export class PayerListModalComponent implements OnInit {
       name: [
         '',
         Validators.required,
-        PayerValidator.validateName(this.billService, this.id!),
+        PayerValidator.validateName(this.billService, this.id),
       ],
       hasChildren: [false],
       childrenForm: this.fb.array([]),
@@ -78,11 +85,7 @@ export class PayerListModalComponent implements OnInit {
                   name: [
                     child.name,
                     Validators.required,
-                    PayerValidator.validateChildrenName(
-                      this.billService,
-                      payer.id!,
-                      child.id!,
-                    ),
+                    this.childrenNameDuplicateAsyncValidator.bind(this),
                   ],
                 }),
               );
@@ -106,18 +109,35 @@ export class PayerListModalComponent implements OnInit {
         name: [
           '',
           Validators.required,
-          PayerValidator.validateChildrenName(
-            this.billService,
-            this.id!,
-            childrenId,
-          ),
+          this.childrenNameDuplicateAsyncValidator.bind(this),
         ],
       }),
     );
   }
 
   removeChildrenForm(index: number): void {
+    if (this.childrenForm.length === 1) {
+      this.payerListForm.patchValue({
+        hasChildren: false,
+      });
+    }
     this.childrenForm.removeAt(index);
+  }
+
+  childrenNameDuplicateAsyncValidator(
+    control: FormControl,
+  ): Observable<ValidationErrors | null> {
+    return new Observable((observer: Observer<ValidationErrors | null>) => {
+      const childrenName: string[] = this.childrenForm.controls.map(
+        (group) => group.get('name')!.value,
+      );
+      if (childrenName.filter((name) => name === control.value).length > 1) {
+        observer.next({ duplicated: true });
+      } else {
+        observer.next(null);
+      }
+      observer.complete();
+    });
   }
 
   savePayer(): void {
