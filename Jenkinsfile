@@ -4,6 +4,7 @@ pipeline {
   environment {
     DOCKER_TAG = getDockerTag()
     IMAGE_URL = "chatreejs/check-bill-enhanced"
+    BASE_HREF = "/billplease/"
   }
 
   stages {
@@ -29,7 +30,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'docker build -f Dockerfile . -t ${IMAGE_URL_WITH_TAG}'
+        sh 'docker build --build-arg BASE_HREF=${BASE_HREF} -f Dockerfile . -t ${IMAGE_URL_WITH_TAG}'
       }
     }
 
